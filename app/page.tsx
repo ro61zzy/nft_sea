@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <div>
       <Nav />
-      <div className="flex flex-col border my-6 mx-4 py-7 rounded-xl items-center justify-center">
+      <div className="flex flex-col border my-6 mx-4 py-7 rounded-xl items-center justify-center border-white bg-white/10 backdrop-blur-sm">
         <h1
           className={`text-2xl font-bold bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 bg-clip-text text-transparent ${cinzel.className}`}
         >
