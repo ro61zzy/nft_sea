@@ -49,7 +49,7 @@ export default function Home() {
       <div className="flex flex-col border my-6 mx-4 py-7 rounded-xl items-center justify-center">
         <h1 className={`text-2xl font-bold bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 bg-clip-text text-transparent ${cinzel.className}`}>Listing Owned NFTs</h1>
       </div>
-     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-5 px-4 pb-10">
+     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 px-4 pb-10">
         {mockNFTs.map((nft, idx) => (
           <NFTCard key={idx} {...nft} />
         ))}

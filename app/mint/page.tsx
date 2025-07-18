@@ -15,9 +15,9 @@ const index = () => {
   return (
     <div>
       <Nav />
-      <div className="flex flex-col border mt-4 mx-4 py-8 rounded-xl bg-gray bg-opacity-30 backdrop-blur-xl items-center justify-center">
+      <div className="flex flex-col border mt-4 mx-4 py-10 rounded-xl bg-gray bg-opacity-30 backdrop-blur-xl items-center justify-center">
         <h1
-          className={`text-2xl font-bold bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 bg-clip-text text-transparent ${cinzel.className}`}
+          className={`text-3xl font-bold bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 bg-clip-text text-transparent ${cinzel.className}`}
         >
           MINT NEW NFT
         </h1>
@@ -27,7 +27,7 @@ const index = () => {
           quis amet scelerisque vivamus egestas.{" "}
         </p>
       </div>
-      <div className="mt-12 flex items-center justify-center">
+      <div className="mt-14 flex items-center justify-center">
         <div className="flex flex-col gap-3 max-w-[360px] w-full">
           <label className="flex flex-col items-center justify-center w-full h-15 border-2 border-dashed border-[#9E9E9E] rounded cursor-pointer hover:border-blue-500 transition p-2 bg-[#383838]">
             <input type="file" className="hidden" />
