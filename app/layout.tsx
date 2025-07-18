@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Web3Provider } from "@/provider/Web3Provider";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "NFT SEA",
@@ -14,8 +15,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="container mx-auto px-12 antialiased bg-[url('/background.png')] bg-cover bg-center min-h-screen">
-        <Web3Provider>{children}</Web3Provider>
+      <body className="antialiased bg-[url('/background.png')] bg-cover bg-center">
+        <Web3Provider>
+          <div className="flex flex-col min-h-screen">
+            <main className="flex-grow container mx-auto px-12 py-2">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </Web3Provider>
       </body>
     </html>
   );

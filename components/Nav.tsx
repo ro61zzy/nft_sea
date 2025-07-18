@@ -14,9 +14,9 @@ const cinzel = Cinzel({
 
 const Nav = () => {
   return (
-    <nav className="pt-4 w-full px-4">
+    <nav className="w-full px-4">
       <div className="flex justify-between items-center w-full">
-        <Link href="/" className={`text-5xl font-bold ${cinzel.className}`}>
+        <Link href="/" className={`text-3xl font-bold ${cinzel.className}`}>
           <h1 className="cursor-pointer">
             <span className="text-white">NFT</span>{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-pink-400">
@@ -27,7 +27,7 @@ const Nav = () => {
 
         <div className="flex items-center gap-5">
           <Link href="/mint">
-            <h1 className="text-xl font-bold text-white hover:text-blue-300 cursor-pointer pt-2">
+            <h1 className="text-l font-bold text-white hover:text-blue-300 cursor-pointer pt-2">
               Mint
             </h1>
           </Link>
