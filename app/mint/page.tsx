@@ -9,6 +9,7 @@ import { uploadFileToIPFS, uploadJSONToIPFS } from "@/lib/pinata";
 import toast from "react-hot-toast";
 import { useWriteContract, useAccount } from "wagmi";
 import { nftContract } from "@/lib/contracts";
+import MintSuccess from "@/components/MintSuccess";
 
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -25,6 +26,9 @@ const index = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [uploading, setUploading] = useState(false);
+  const [txHash, setTxHash] = useState<string | null>(null);
+
+  const [minted, setMinted] = useState(false);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
@@ -63,6 +67,8 @@ const index = () => {
       toast.dismiss();
       toast.success("NFT minted successfully!");
       console.log("Transaction hash:", txHash);
+      setTxHash(txHash);
+      setMinted(true);
     } catch (err: any) {
       console.error("Mint error:", err);
       toast.dismiss();
@@ -89,13 +95,12 @@ const index = () => {
       </div>
       {!isConnected ? (
         <div className="mt-20 flex justify-center">
-          <p
-            className="text-white
-     px-6 py-3 rounded-xl shadow-lg"
-          >
+          <p className="text-white px-6 py-3 rounded-xl shadow-lg">
             Please connect your wallet to mint NFTs.
           </p>
         </div>
+      ) : minted ? (
+        <MintSuccess txHash={txHash} />
       ) : (
         <div className="mt-16 flex items-center justify-center">
           <div className="flex flex-col gap-3 max-w-[360px] w-full">

@@ -47,10 +47,10 @@ export const NFTCard = ({
           >
             {title}
           </h2>
-         <p className="text-[13px] text-white">
-  {description?.split(" ").slice(0, 10).join(" ")}{description?.split(" ").length > 10 ? "..." : ""}
-</p>
-
+          <p className="text-[13px] text-white">
+            {description?.split(" ").slice(0, 10).join(" ")}
+            {description?.split(" ").length > 10 ? "..." : ""}
+          </p>
         </div>
       </DialogTrigger>
 
