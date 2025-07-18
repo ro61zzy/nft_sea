@@ -1,6 +1,11 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Nav from "@/components/Nav";
 import { NFTCard } from "@/components/NFTCard";
 import { Cinzel } from "next/font/google";
+import { useAccount } from "wagmi";
+import { getNFTsForOwner } from "@/lib/alchemy";
 
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -9,40 +14,31 @@ const cinzel = Cinzel({
   display: "swap",
 });
 
-const mockNFTs = [
-  {
-    title: "Golden Artifact",
-    description: "A unique digital relic from the lost civilization.",
-    imageUrl: "/nft_example.png",
-    details: "Minted on Ethereum in 2023. Owned by you.",
-  },
-  {
-    title: "Crypto Dragon",
-    description: "A fierce creature with legendary fire.",
-    imageUrl: "/nft_example.png",
-    details: "Minted on Polygon. 1 of 50 editions.",
-  },
-  {
-    title: "Crypto Dragon",
-    description: "A fierce creature with legendary fire.",
-    imageUrl: "/nft_example.png",
-    details: "Minted on Polygon. 1 of 50 editions.",
-  },
-  {
-    title: "Crypto Dragon",
-    description: "A fierce creature with legendary fire.",
-    imageUrl: "/nft_example.png",
-    details: "Minted on Polygon. 1 of 50 editions.",
-  },
-  {
-    title: "Crypto Dragon",
-    description: "A fierce creature with legendary fire.",
-    imageUrl: "/nft_example.png",
-    details: "Minted on Polygon. 1 of 50 editions.",
-  },
-];
+
 
 export default function Home() {
+
+  const { address, isConnected } = useAccount();
+  const [nfts, setNfts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchNFTs = async () => {
+      if (!address) return;
+      setLoading(true);
+      try {
+        const data = await getNFTsForOwner(address);
+        setNfts(data);
+      } catch (err) {
+        console.error("Failed to load NFTs", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchNFTs();
+  }, [address]);
+
   return (
     <div>
       <Nav />
@@ -53,13 +49,25 @@ export default function Home() {
           Listing Owned NFTs
         </h1>
       </div>
+      {!isConnected ? (
+      <div className="w-full flex justify-center mt-10">
+        <p className="text-white text-lg px-6 py-3 rounded-xl shadow-lg">
+          Please connect your wallet to view your NFTs.
+        </p>
+      </div>
+    ) : loading ? (
+      <div className="w-full flex justify-center mt-10">
+        <p className="text-white text-lg animate-pulse">Loading NFTs...</p>
+      </div>
+    ) : (
       <div className="w-full flex justify-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl px-4 pb-10">
-          {mockNFTs.map((nft, idx) => (
+          {nfts.map((nft, idx) => (
             <NFTCard key={idx} {...nft} />
           ))}
         </div>
       </div>
+    )}
     </div>
   );
 }
