@@ -34,20 +34,20 @@ export const NFTCard = ({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="cursor-pointer bg-black rounded-lg shadow-md hover:shadow-xl transition-all p-4 w-[280px]">
+        <div className="cursor-pointer bg-transparent rounded-lg shadow-lg hover:shadow-xl transition-all p-2 w-[213px]">
           <Image
             src={imageUrl}
             alt={title}
             width={240}
             height={240}
-            className="rounded-md mb-2"
+            className="rounded mb-2"
           />
-          <h2 className={`text-xl font-bold mb-1 text-white ${cinzel.className}`}>{title}</h2>
-          <p className="text-sm text-white">{description}</p>
+          <h2 className={`text-l font-bold mb-1 text-white ${cinzel.className}`}>{title}</h2>
+          <p className="text-[13px] text-white">{description}</p>
         </div>
       </DialogTrigger>
 
-      <DialogContent className="max-w-5xl bg-black">
+      <DialogContent className="max-w-7xl bg-black">
         <div className="flex flex-col md:flex-row gap-6">
           <div>
             <Image
@@ -59,16 +59,18 @@ export const NFTCard = ({
             />
             <Accordion type="single" collapsible className="w-full text-white mt-4">
               <AccordionItem value="details">
-                <AccordionTrigger>Details</AccordionTrigger>
+               <AccordionTrigger className="bg-[#383838] rounded-[2px] px-[5px] py-2">Details</AccordionTrigger>
+
                 <AccordionContent>
-                  <p className="text-md text-white">{details}</p>
+                  <p className="text-md text-white pt-4 px-[5px]">{details}</p>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
           </div>
           <div className="flex flex-col gap-2">
-            <h2 className={`text-2xl font-bold text-white ${cinzel.className}`}>{title}</h2>
-            <p className="text-white">{description}</p>
+            <h2 className={`text-xl font-bold text-white ${cinzel.className}`}>{title}</h2>
+            <p className="font-bold text-white text-[14px] mt-2">DESCRIPTION</p>
+            <p className="text-white text-sm">{description}</p>
           </div>
         </div>
       </DialogContent>

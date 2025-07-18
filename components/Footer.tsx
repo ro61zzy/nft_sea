@@ -24,7 +24,7 @@ const Footer = () => {
         NFT Sea 2025 © All rights reserved
       </p>
 
-      <button className="mt-4 sm:mt-0 py-2 px-4 rounded-lg text-white font-semibold bg-gradient-to-r from-blue-600 to-pink-600 hover:from-blue-700 hover:to-pink-700 transition-all">
+      <button className="mt-4 sm:mt-0 py-2 px-4 text-xs rounded-sm text-white font-semibold bg-gradient-to-r from-blue-600 to-pink-600 hover:from-blue-700 hover:to-pink-700 transition-all">
         Explore Marketplace
       </button>
     </div>
