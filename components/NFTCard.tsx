@@ -34,14 +34,16 @@ export const NFTCard = ({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="cursor-pointer bg-transparent rounded-lg shadow-lg hover:shadow-xl transition-all p-2 w-[213px]">
-          <Image
-            src={imageUrl}
-            alt={title}
-            width={240}
-            height={240}
-            className="rounded mb-2"
-          />
+        <div className="cursor-pointer bg-transparent rounded-lg shadow-lg hover:shadow-xl transition-all p-4 w-full">
+
+         <Image
+  src={imageUrl}
+  alt={title}
+  width={240}
+  height={240}
+  className="rounded mb-2 mx-auto"
+/>
+
           <h2 className={`text-l font-bold mb-1 text-white ${cinzel.className}`}>{title}</h2>
           <p className="text-[13px] text-white">{description}</p>
         </div>
