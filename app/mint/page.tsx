@@ -27,7 +27,7 @@ const index = () => {
           quis amet scelerisque vivamus egestas.{" "}
         </p>
       </div>
-      <div className="mt-8 flex items-center justify-center">
+      <div className="mt-12 flex items-center justify-center">
         <div className="flex flex-col gap-3 max-w-[360px] w-full">
           <label className="flex flex-col items-center justify-center w-full h-15 border-2 border-dashed border-[#9E9E9E] rounded cursor-pointer hover:border-blue-500 transition p-2 bg-[#383838]">
             <input type="file" className="hidden" />
