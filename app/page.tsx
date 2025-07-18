@@ -13,7 +13,7 @@ const cinzel = Cinzel({
 
 export default function Home() {
   return (
-   <div className="container mx-auto px-12">
+   <div >
       <Nav />
     <p className={`text-4xl text-red-700 ${cinzel.className}`}>check check check</p>
     </div>

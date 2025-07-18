@@ -39,9 +39,10 @@ export function WalletOptions() {
 
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <button className="flex items-center gap-2 px-4 py-2 text-white rounded hover:bg-gray-100">
-          <Wallet className="w-8 h-8" />
+     <SheetTrigger asChild>
+  <button className="flex items-center gap-2 px-4 py-2 text-sm text-white hover:bg-gray-700 transition">
+    <Wallet className="w-7 h-7" />
+
           {isConnected && (
             <span className="text-sm font-medium">
               {ensName || shortenAddress(address)}
