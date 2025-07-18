@@ -1,4 +1,4 @@
-// lib/pinata.ts
+
 import axios from 'axios';
 
 const PINATA_API_KEY = process.env.NEXT_PUBLIC_PINATA_API_KEY!;

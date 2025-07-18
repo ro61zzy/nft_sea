@@ -89,6 +89,14 @@ const { writeContractAsync } = useWriteContract();
           quis amet scelerisque vivamus egestas.{" "}
         </p>
       </div>
+      {!isConnected ? (
+  <div className="mt-20 flex justify-center">
+    <p className="text-white
+     px-6 py-3 rounded-xl shadow-lg">
+      Please connect your wallet to mint NFTs.
+    </p>
+  </div>
+) : (
       <div className="mt-16 flex items-center justify-center">
         <div className="flex flex-col gap-3 max-w-[360px] w-full">
           <label className="flex flex-col items-center justify-center w-full h-15 border-2 border-dashed border-[#9E9E9E] rounded cursor-pointer hover:border-blue-500 transition p-2 bg-[#383838]">
@@ -137,6 +145,7 @@ const { writeContractAsync } = useWriteContract();
           </div>
         </div>
       </div>
+      )}
     </div>
   );
 };

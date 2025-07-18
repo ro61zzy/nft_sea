@@ -62,9 +62,16 @@ export default function Home() {
     ) : (
       <div className="w-full flex justify-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl px-4 pb-10">
-          {nfts.map((nft, idx) => (
-            <NFTCard key={idx} {...nft} />
-          ))}
+          {nfts.length === 0 ? (
+  <p className="text-white text-lg text-center col-span-full">
+    You don’t own any NFTs yet. Try minting one first.
+  </p>
+) : (
+  nfts.map((nft, idx) => (
+    <NFTCard key={idx} {...nft} />
+  ))
+)}
+
         </div>
       </div>
     )}
