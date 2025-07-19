@@ -1,5 +1,3 @@
-// lib/alchemy.ts
-
 export async function getNFTsForOwner(ownerAddress: string) {
   const baseURL = `https://eth-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_MY_ALCHEMY_API_KEY}`;
   const url = `${baseURL}/getNFTs/?owner=${ownerAddress}`;
@@ -27,7 +25,7 @@ export async function getNFTsForOwner(ownerAddress: string) {
 }
 
 function normalizeIpfsUrl(url: string): string {
-  if (!url) return "/fallback-image.png"; // Local fallback image
+  if (!url) return "no image found"; 
   if (url.startsWith("ipfs://")) {
     return url.replace("ipfs://", "https://ipfs.io/ipfs/");
   }

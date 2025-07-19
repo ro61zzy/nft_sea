@@ -25,7 +25,7 @@ const Nav = () => {
           </h1>
         </Link>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-1 sm:gap-5">
           <Link href="/mint">
             <h1 className="text-l font-bold text-white hover:text-blue-300 cursor-pointer pt-2">
               Mint

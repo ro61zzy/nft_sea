@@ -1,4 +1,4 @@
-// components/MintSuccess.tsx
+
 'use client';
 
 import { CheckCircle } from 'lucide-react';

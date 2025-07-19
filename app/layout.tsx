@@ -19,7 +19,8 @@ export default function RootLayout({
       <body className="antialiased bg-[url('/background.png')] bg-cover bg-center">
         <Web3Provider>
           <div className="flex flex-col min-h-screen">
-            <main className="flex-grow container mx-auto px-12 py-2">
+            <main className="flex-grow container mx-auto px-2 py-4 sm:px-12 sm:py-2">
+              
                <Toaster position="top-center" />
               {children}
             </main>

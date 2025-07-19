@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <div className='bg-black'>
 
-    <div className="  container mx-auto px-8 py-2 flex flex-col sm:flex-row justify-between items-center w-full ">
+    <div className="  container mx-auto px-12 py-2 flex flex-col sm:flex-row justify-between items-center w-full ">
       <h1 className={`cursor-pointer font-bold text-2xl ${cinzel.className}`}>
         <span className="text-white">NFT</span>{" "}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-pink-400">

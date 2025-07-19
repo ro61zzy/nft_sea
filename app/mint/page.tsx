@@ -95,7 +95,7 @@ const index = () => {
       </div>
       {!isConnected ? (
         <div className="mt-20 flex justify-center">
-          <p className="text-white px-6 py-3 rounded-xl shadow-lg">
+          <p className="text-white px-6 py-3 rounded-xl shadow-lg text-center">
             Please connect your wallet to mint NFTs.
           </p>
         </div>

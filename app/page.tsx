@@ -14,10 +14,7 @@ const cinzel = Cinzel({
   display: "swap",
 });
 
-
-
 export default function Home() {
-
   const { address, isConnected } = useAccount();
   const [nfts, setNfts] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
@@ -50,31 +47,28 @@ export default function Home() {
         </h1>
       </div>
       {!isConnected ? (
-      <div className="w-full flex justify-center mt-10">
-        <p className="text-white text-lg px-6 py-3 rounded-xl shadow-lg">
-          Please connect your wallet to view your NFTs.
-        </p>
-      </div>
-    ) : loading ? (
-      <div className="w-full flex justify-center mt-10">
-        <p className="text-white text-lg animate-pulse">Loading NFTs...</p>
-      </div>
-    ) : (
-      <div className="w-full flex justify-center">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl px-4 pb-10">
-          {nfts.length === 0 ? (
-  <p className="text-white text-lg text-center col-span-full">
-    You don’t own any NFTs yet. Try minting one first.
-  </p>
-) : (
-  nfts.map((nft, idx) => (
-    <NFTCard key={idx} {...nft} />
-  ))
-)}
-
+        <div className="w-full flex justify-center mt-10">
+          <p className="text-white text-lg px-6 py-3 rounded-xl shadow-lg text-center">
+            Please connect your wallet to view your NFTs.
+          </p>
         </div>
-      </div>
-    )}
+      ) : loading ? (
+        <div className="w-full flex justify-center mt-10">
+          <p className="text-white text-lg animate-pulse">Loading NFTs...</p>
+        </div>
+      ) : (
+        <div className="w-full flex justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl px-4 pb-10">
+            {nfts.length === 0 ? (
+              <p className="text-white text-lg text-center col-span-full">
+                You don’t own any NFTs yet. Try minting one first.
+              </p>
+            ) : (
+              nfts.map((nft, idx) => <NFTCard key={idx} {...nft} />)
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
