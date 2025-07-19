@@ -34,7 +34,8 @@ export function WalletOptions() {
   function getWalletEmoji(walletName: string): string {
     const name = walletName.toLowerCase();
     if (name.includes("metamask")) return "🦊";
-    return "🦊";
+    if (name.includes("walletconnect")) return "🔹";
+    return "💎";
   }
 
   return (
